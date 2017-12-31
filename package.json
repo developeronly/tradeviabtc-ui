@@ -12,7 +12,8 @@
     "open:src": "babel-node tools/srcDevServer.js",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "security-check": "nsp check"
   },
   "author": "Dheeraj Karande, Rajendra Furde",
   "license": "MIT",
@@ -81,7 +82,8 @@
     "webpack-bundle-analyzer": "2.8.2",
     "webpack-dev-middleware": "1.11.0",
     "webpack-hot-middleware": "2.18.2",
-    "webpack-md5-hash": "0.0.5"
+    "webpack-md5-hash": "0.0.5",
+    "nsp": "3.1.0"
   },
   "keywords": [],
   "repository": {
