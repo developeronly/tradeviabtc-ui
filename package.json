@@ -8,10 +8,11 @@
   "scripts": {
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm run start-message",
-    "start": "concurrently -k -r -s first \"npm run open:src\" \"npm run lint:watch\"",
+    "start": "concurrently -k -r -s first \"npm run test:watch\" \"npm run open:src\" \"npm run lint:watch\"",
     "open:src": "babel-node tools/srcDevServer.js",
     "lint": "esw webpack.config.* src tools --color",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "test:watch": "jest --watch"
   },
   "author": "Dheeraj Karande, Rajendra Furde",
   "license": "MIT",
@@ -86,5 +87,15 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/developeronly/tradeviasbtc-ui"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/assetsTransformer.js",
+      "\\.(css|less)$": "<rootDir>/tools/assetsTransformer.js"
+    },
+    "setupFiles": [
+      "raf/polyfill",
+      "./tools/enzymeTestAdapterSetup.js"
+    ]
   }
 }
