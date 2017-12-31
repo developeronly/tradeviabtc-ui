@@ -1,0 +1,56 @@
+body
+  +font(14px, 16px, $gray-20)
+  background: $gray-98
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+h1, h2, h3, h4, h5
+  margin: 0
+
+ul
+  padding-left: 0
+
+li
+  list-style-type: none
+
+/* Button Styles: Start */
+
+.primaryBtn
+  +font(16px, 18px, $white-1)
+  text-transform: uppercase
+  background: $picton-blue
+  border: none
+  padding: 9px
+  font-weight: bold
+  display: block
+  width: 100%
+  border-radius: 8px
+  &:focus, &:hover, &:active
+    color: $white-1
+    outline: 0 !important
+
+/* Button Styles: End */
+
+/* Input Styles: Start */
+
+.form-group
+  margin-bottom: 15px
+
+.form-control
+  height: 40px
+  +font(16px, 18px, $sgilightgrey)
+  border: 1px solid $whisper
+  box-shadow: none
+
+/* Input Styles: End */
+
+.hide
+  display: none
+
+/* Error Message : Start */
+
+.errorMsg
+  +font(12px, 13px, $torch-red)
+  display: block
+  margin-top: 6px
+
+/* Error Message: End */
